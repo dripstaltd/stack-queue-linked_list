@@ -65,6 +65,7 @@ function LinkedList() {
   this.tail = null;
 }
 
+// Add to Tail
 LinkedList.prototype.addToTail = function (value) {
   const node = new Node(value);
   if (!this.tail) {
@@ -77,12 +78,17 @@ LinkedList.prototype.addToTail = function (value) {
   return true;
 };
 
-LinkedList.prototype.removeHead = function () {
-  if (!this.head) return null;
-  const value = this.head.value;
-  this.head = this.head.next;
-  if (!this.head) this.tail = null;
-  return value;
+// Add to Head
+LinkedList.prototype.addToHead = function (value) {
+  const node = new Node(value);
+  if (!this.head) {
+    this.head = node;
+    this.tail = node;
+  } else {
+    node.next = this.head;
+    this.head = node;
+  }
+  return true;
 };
 
 LinkedList.prototype.size = function () {
@@ -153,10 +159,18 @@ $(document).ready(function () {
   });
 
   $('#action2').click(function () {
-    if (currentStructure === 'stack') stack.pop();
-    else if (currentStructure === 'queue') queue.dequeue();
-    else if (currentStructure === 'linkedList') linkedList.removeHead();
-    updateDisplay();
+    const value = $('#inputValue').val();
+    if (value && currentStructure === 'linkedList') {
+      linkedList.addToHead(value);
+      $('#inputValue').val('');
+      updateDisplay();
+    } else if (currentStructure === 'stack') {
+      stack.pop();
+      updateDisplay();
+    } else if (currentStructure === 'queue') {
+      queue.dequeue();
+      updateDisplay();
+    }
   });
 
   $('#toggle-structure').click(function () {
@@ -170,7 +184,7 @@ $(document).ready(function () {
       currentStructure = 'linkedList';
       $('#structure-title').text('Linked List Visual Representation');
       $('#action1').text('Add to Tail');
-      $('#action2').text('Remove Head');
+      $('#action2').text('Add to Head');
       $('#toggle-structure').text('Switch to Stack');
     } else {
       currentStructure = 'stack';
