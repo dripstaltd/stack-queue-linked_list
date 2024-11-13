@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structure Visualization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="toggle-structure">Switch to Queue</button>
+
+  <div id="app-container">
+    <h1 id="structure-title">Stack Visual Representation</h1>
+
+    <div id="controls">
+      <input type="text" id="inputValue" placeholder="Enter a value" />
+      <div id="button-group">
+        <button id="action1">Push</button>
+        <button id="action2">Pop</button>
+      </div>
+      <p id="structure-size">Size: <span id="size-value">0</span></p>
+    </div>
+
+    <div id="structure-container"></div>
+
+    <div id="internal-display">
+      <h2>Internal State</h2>
+      <p><strong>Storage:</strong> <span id="storage-content">{}</span></p>
+      <p><strong>Length:</strong> <span id="length-value">0</span></p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

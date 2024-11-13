@@ -1,0 +1,163 @@
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Main container styling */
+#app-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Toggle button styling */
+#toggle-structure {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#toggle-structure:hover {
+  background-color: #0056b3;
+}
+
+/* Controls section */
+#controls {
+  margin-top: 10px;
+}
+
+#controls input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: calc(100% - 160px);
+  max-width: 240px;
+  margin-right: 10px;
+}
+
+/* Button group styling */
+#button-group {
+  display: inline-flex;
+  gap: 10px;
+}
+
+#button-group button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#button-group button:hover {
+  background-color: #218838;
+}
+
+/* Structure container base styles */
+#structure-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Stack container - vertical */
+#structure-container.stack {
+  flex-direction: column-reverse; /* Stack items from bottom to top */
+  align-items: center;
+}
+
+/* Queue and Linked List container - horizontal */
+#structure-container.queue,
+#structure-container.linked-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Item styling for stack, queue, and linked list */
+.stack-item, .queue-item, .linked-list-item {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #007bff;
+  background-color: #e9f7fe;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Arrows to indicate front, back, head, and tail */
+.arrow {
+  position: absolute;
+  font-size: 14px;
+  color: #ff4d4d;
+}
+
+.arrow-front {
+  top: -20px;
+  left: 5px;
+}
+
+.arrow-back {
+  bottom: -20px;
+  right: 5px;
+}
+
+/* Internal State Display */
+#internal-display {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#internal-display h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#internal-display p {
+  font-size: 16px;
+  margin: 5px 0;
+}
